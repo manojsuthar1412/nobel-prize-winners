@@ -16,7 +16,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    getList();
+    // getList();
   }, []);
 
   return (
@@ -25,7 +25,7 @@ const Home = () => {
       <h1 style={{ textAlign: "center" }}>List of All Nobel Prize Winners</h1>
 
       {/* <ShowList data={list} /> */}
-      <SpecialList data={list} />
+      {/* <SpecialList data={list} /> */}
     </div>
   );
 };

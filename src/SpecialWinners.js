@@ -29,12 +29,9 @@ const SpecialWinners = () => {
       .catch((err) => console.log(err));
   };
 
-  
- 
   useEffect(() => {
-    getList();
+    // getList();
   }, []);
-
 
   return (
     <div style={{ textAlign: "center" }}>
@@ -42,7 +39,7 @@ const SpecialWinners = () => {
       <h1>Special Winners</h1>
       <p>(Awarded multiple times)</p>
 
-      <SpecialList data={list} />
+      {/* <SpecialList data={list} /> */}
     </div>
   );
 };
