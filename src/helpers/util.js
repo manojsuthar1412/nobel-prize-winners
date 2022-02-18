@@ -1,12 +1,11 @@
 export const priceList = () => {
+  let dataList = [];
   return fetch(`http://api.nobelprize.org/v1/prize.json`)
     .then((res) => res.json())
     .then((data) => {
       data = data.prizes.filter(
         (item) => item.year >= 1900 && item.year <= 2018
       );
-
-      let dataList = [];
 
       data?.map((listItem) => {
         if (listItem.laureates) {
@@ -19,6 +18,7 @@ export const priceList = () => {
             return dataList;
           });
         }
+        return dataList;
       });
 
       return dataList;
