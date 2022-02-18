@@ -57,13 +57,6 @@ const columns: GridColDef[] = [
   },
 ];
 
-function ExportToolBar() {
-  return (
-    <GridToolbarContainer>
-      <GridToolbarExport />
-    </GridToolbarContainer>
-  );
-}
 
 const ShowList = ({ data }) => {
 

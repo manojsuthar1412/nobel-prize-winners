@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Header from "./helpers/Header";
-import ShowList from "./helpers/ShowList";
 import SpecialList from "./helpers/SpecialList";
 import priceList from "./helpers/util";
 
 const SpecialWinners = () => {
   const [list, setList] = useState([]);
-  const [modifiedList, setModifiedList] = useState([]);
 
   const getList = () => {
     priceList()
