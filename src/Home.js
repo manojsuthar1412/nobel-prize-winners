@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from "./helpers/Header";
 import ShowList from "./helpers/ShowList";
+import SpecialList from "./helpers/SpecialList";
 import priceList from "./helpers/util";
 
 const Home = () => {
@@ -23,7 +24,8 @@ const Home = () => {
       <Header />
       <h1 style={{ textAlign: "center" }}>List of All Nobel Prize Winners</h1>
 
-      <ShowList data={list} />
+      {/* <ShowList data={list} /> */}
+      <SpecialList data={list} />
     </div>
   );
 };

@@ -55,9 +55,8 @@ const columns: GridColDef[] = [
   },
 ];
 
-
 const ShowList = ({ data }) => {
-
+  console.log(data);
   return (
     <Box
       sx={{
@@ -81,6 +80,7 @@ const ShowList = ({ data }) => {
       }}
     >
       <DataGrid
+        key={({ item }) => item.motivation}
         rows={data.length ? data : rows}
         columns={columns}
         components={{

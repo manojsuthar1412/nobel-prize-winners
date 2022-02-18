@@ -7,7 +7,7 @@ export const priceList = () => {
         (item) => item.year >= 1900 && item.year <= 2018
       );
 
-      data?.map((listItem) => {
+      data.map((listItem) => {
         if (listItem.laureates) {
           listItem?.laureates?.map((item) => {
             dataList.push({
