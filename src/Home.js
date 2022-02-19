@@ -7,7 +7,8 @@ import priceList from "./helpers/util";
 const Home = () => {
   const [list, setList] = useState([]);
 
-  let dataList = [];
+  // let dataList = [];
+  let key = 0;
 
   const getList = async () => {
     // let data = await priceList();
@@ -16,24 +17,24 @@ const Home = () => {
       .then((data) => {
         console.log("DATA: ", data);
 
-        // let dataList = [];
-        // data = data.map((listItem) => {
-        //   if (listItem.laureates) {
-        //     listItem?.laureates?.map((item) => {
-        //       dataList.push({
-        //         key: key++,
-        //         year: listItem.year,
-        //         category: listItem.category,
-        //         ...item,
-        //       });
-        //       return dataList;
-        //     });
-        //   }
-        //   return dataList;
-        // });
+        let dataList = [];
+        data = data.map((listItem) => {
+          if (listItem.laureates) {
+            listItem?.laureates?.map((item) => {
+              dataList.push({
+                key: key++,
+                year: listItem.year,
+                category: listItem.category,
+                ...item,
+              });
+              return dataList;
+            });
+          }
+          return dataList;
+        });
         // data = data.slice(0, 10);
-        // console.log("FILTERED: ", data);
-        setList(data);
+        console.log("FILTERED: ", dataList);
+        setList(dataList);
       })
       .catch((err) => console.log(err));
   };
@@ -47,7 +48,7 @@ const Home = () => {
       <Header />
       <h1 style={{ textAlign: "center" }}>List of All Nobel Prize Winners</h1>
       {/* {console.log(list)} */}
-      {list.length && <SpecialList data={list} />}
+      {list.length && <ShowList data={list} />}
       {/* <SpecialList data={list} /> */}
     </div>
   );

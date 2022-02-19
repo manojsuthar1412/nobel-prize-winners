@@ -6,27 +6,10 @@ export const priceList = () => {
         (item) => item.year >= 1900 && item.year <= 2018
       );
       let dataList = [];
-      let key = 0;
 
       // console.log("RAW: ", data);
 
-      data = data.map((listItem) => {
-        if (listItem.laureates) {
-          listItem?.laureates?.map((item) => {
-            dataList.push({
-              key: key++,
-
-              year: listItem.year,
-              category: listItem.category,
-              ...item,
-            });
-            return dataList;
-          });
-        }
-        return dataList;
-      });
-
-      return dataList;
+      return data;
     })
     .catch((err) => console.log(err));
 };
