@@ -80,7 +80,7 @@ const ShowList = ({ data }) => {
       }}
     >
       <DataGrid
-        key={({ item }) => item.motivation}
+        getRowId={(row) => row.key}
         rows={data.length ? data : rows}
         columns={columns}
         components={{

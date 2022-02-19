@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "./helpers/Header";
+import ShowList from "./helpers/ShowList";
 import SpecialList from "./helpers/SpecialList";
 import priceList from "./helpers/util";
 
@@ -30,7 +31,7 @@ const SpecialWinners = () => {
   };
 
   useEffect(() => {
-    // getList();
+    getList();
   }, []);
 
   return (
@@ -39,6 +40,7 @@ const SpecialWinners = () => {
       <h1>Special Winners</h1>
       <p>(Awarded multiple times)</p>
 
+      {list.length && <ShowList data={list} />}
       {/* <SpecialList data={list} /> */}
     </div>
   );

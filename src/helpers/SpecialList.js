@@ -8,6 +8,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
 export default function SpecialList({ data }) {
+  console.log("DATA IN SPECIAL: ", data);
   return (
     <TableContainer
       component={Paper}
@@ -27,19 +28,21 @@ export default function SpecialList({ data }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map((item) => (
-            <TableRow
-              key={item.year}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {item.firstname + " " + item.surname}
-              </TableCell>
-              <TableCell>{item.category}</TableCell>
-              <TableCell>{item.year}</TableCell>
-              <TableCell>{item.motivation}</TableCell>
-            </TableRow>
-          ))}
+          {data.map((item) => {
+            return item.map((row) => (
+              <TableRow
+                key={row.key}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  {row.firstname + " " + row.surname}
+                </TableCell>
+                <TableCell>{row.category}</TableCell>
+                <TableCell>{row.year}</TableCell>
+                <TableCell>{row.motivation}</TableCell>
+              </TableRow>
+            ));
+          })}
         </TableBody>
       </Table>
     </TableContainer>
