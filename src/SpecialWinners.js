@@ -40,7 +40,7 @@ const SpecialWinners = () => {
       <h1>Special Winners</h1>
       <p>(Awarded multiple times)</p>
 
-      {list.length && <ShowList data={list} />}
+      {list.length && <SpecialList data={list} />}
       {/* <SpecialList data={list} /> */}
     </div>
   );

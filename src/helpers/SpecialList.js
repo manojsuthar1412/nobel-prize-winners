@@ -28,8 +28,8 @@ export default function SpecialList({ data }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map((item) => {
-            return item.map((row) => (
+          {data.map((row) => (
+            // return item.map((row) => (
               <TableRow
                 key={row.key}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
@@ -41,8 +41,8 @@ export default function SpecialList({ data }) {
                 <TableCell>{row.year}</TableCell>
                 <TableCell>{row.motivation}</TableCell>
               </TableRow>
-            ));
-          })}
+            // ));
+          ))}
         </TableBody>
       </Table>
     </TableContainer>

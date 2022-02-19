@@ -47,7 +47,7 @@ const Home = () => {
       <Header />
       <h1 style={{ textAlign: "center" }}>List of All Nobel Prize Winners</h1>
       {/* {console.log(list)} */}
-      {list.length && <ShowList data={list} />}
+      {list.length && <SpecialList data={list} />}
       {/* <SpecialList data={list} /> */}
     </div>
   );
